@@ -38,6 +38,7 @@ when "debian"
   package "riak-cs" do
     action :install
     version package_version
+    options '-o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"'
   end
 when "rhel"
   include_recipe "yum"
